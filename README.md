@@ -1,5 +1,5 @@
 # Typing Effect
-Typing Effect for the VSE.
+Typing Effect for the Blender Video Sequence Editor.
 
 ## Installation
 - Download: https://github.com/tin2tin/typing_effect_vse/archive/refs/heads/main.zip
