@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Typing Effect for VSE Text Strips",
     "description": "Adds a typing animation effect to VSE text strips based on strip timings.",
-    "author": "tintwotin",
+    "author": "Your Name",
     "version": (1, 0, 4),
     "blender": (3, 0, 0),
     "location": "Video Sequence Editor > Sidebar > Effect Strip",
@@ -35,12 +35,15 @@ def typing_animation_handler(scene):
 # Sync typing_effect_text with text when enabling/disabling the effect
 def toggle_typing_effect(self, context):
     strip = context.scene.sequence_editor.active_strip
-    if strip.typing_effect_enabled:
-        # Copy current text to typing_effect_text when enabling
-        strip.typing_effect_text = strip.text
-    else:
-        # Copy typing_effect_text back to text when disabling
-        strip.text = strip.typing_effect_text
+    if strip and strip.type == 'TEXT':
+        if strip.typing_effect_enabled:
+            # Copy current text to typing_effect_text when enabling
+            strip.typing_effect_text = strip.text
+            register_handlers()
+        else:
+            # Copy typing_effect_text back to text when disabling
+            strip.text = strip.typing_effect_text
+            unregister_handlers()
 
 # Draw function to prepend UI elements
 def draw_typing_effect_ui(self, context):
