@@ -1,7 +1,7 @@
 bl_info = {
     "name": "Typing Effect for VSE Text Strips",
     "description": "Adds a typing animation effect to VSE text strips based on strip timings.",
-    "author": "Your Name",
+    "author": "tintwotin",
     "version": (1, 0, 4),
     "blender": (3, 0, 0),
     "location": "Video Sequence Editor > Sidebar > Effect Strip",
